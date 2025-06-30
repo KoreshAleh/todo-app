@@ -17,13 +17,20 @@ import { createContext, useState, useEffect, useContext } from "react";
 
 
          const addPart = (title) => {
+            
+            const now = new Date();
+             const formatted = now.toLocaleString('ru-RU');
             if (title.trim() === "") return;
             const newPart = {
             id: Date.now(),
             title,
-            completed: false
+            completed: false,
+            createdAt: formatted
         };
             setPart((prev) => [...prev, newPart]);
+
+
+        
     };
 
 
@@ -31,12 +38,14 @@ import { createContext, useState, useEffect, useContext } from "react";
         setPart((prev) => prev.filter((t) => t.id !== id));
     };
 
+
+
       
 
   
 
     return(
-        <ToDoContext.Provider value={{part, addPart, deletePart,setPart }}>
+        <ToDoContext.Provider value={{part, addPart, deletePart,setPart}}>
             {children}
         </ToDoContext.Provider>
     )

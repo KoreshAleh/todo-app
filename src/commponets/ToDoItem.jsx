@@ -10,7 +10,9 @@ function ToDoItem({parts, handelEditID, handelChek}) {
                         color: parts.completed ? "black" : "white",
                         opacity: parts.completed ? 0.4 : 1,
   }}>{parts.title}</h3>
+               
                 <div className="buttons">
+                     <p>{parts.createdAt}</p>
                     <button onClick={() => handelEditID(parts.id)}>Edit</button>
                     <button onClick={() => deletePart(parts.id)}>Delete</button>
                 </div>

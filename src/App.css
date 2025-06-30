@@ -157,6 +157,8 @@
   font-weight: 700;
 }
 
+
+
 /* ----------- Адаптив для мобильных ---------- */
 @media screen and (max-width: 600px) {
   .wrapper {
